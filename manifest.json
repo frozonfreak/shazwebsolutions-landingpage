@@ -1,0 +1,20 @@
+{
+  "short_name": "SWS",
+  "name": "ShazWebSolutions",
+  "icons": [
+    {
+      "src": "/assets/icons/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FE856C",
+  "display": "standalone",
+  "theme_color": "#FE856C"
+}
