@@ -260,7 +260,7 @@ a.read-more:hover {
 .welcome-image-area {
     position: relative;
     height: 100%;
-    background: url(../images/bg/mainbg_apple.webp);
+    background: url(../images/bg/mainbg_apple_compressed.jpg);
     background-size: cover;
     z-index: 1;
 }
@@ -443,7 +443,7 @@ a.slide-btn.other-btn:hover {
 }
 
 .version:after {
-    background-image: url(../images/bg/banner-waves-2.webp);
+    background-image: url(../images/bg/banner-waves-2_compressed.png);
 }
 
 
