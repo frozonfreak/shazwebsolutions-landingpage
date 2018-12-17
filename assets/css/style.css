@@ -116,8 +116,8 @@ a.read-more {
     padding: 12px 25px;
     text-transform: capitalize;
     font-size: 14px;
-    border: 1px solid #FE856C;
-    background-color: #FE856C;
+    border: 1px solid #000000;
+    background-color: #000000;
     font-weight: 600;
     letter-spacing: 1px;
     box-shadow: 0px 0px 70px rgba(29, 24, 24, 0.09);
@@ -127,7 +127,7 @@ a.read-more {
 a.read-more:hover {
     background: transparent;
     color: #000;
-    border: 1px solid #FE856C;
+    border: 1px solid #000000;
     -webkit-transition: .3s;
     transition: .3s;
 }
@@ -146,7 +146,7 @@ a.read-more:hover {
     cursor: pointer;
     display: none;
     z-index: 2;
-    background: #FE856C;
+    background: #000000;
 }
 
 .scrollup:hover {
@@ -193,14 +193,14 @@ a.read-more:hover {
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: #FE856C;
+    background-color: #000000;
     border-radius: 100%;
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
     animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
 .dot1 {
-    background-color: #FE856C;
+    background-color: #000000;
 }
 
 .dot2 {
@@ -267,7 +267,7 @@ a.read-more:hover {
 
 .welcome-image-area:after {
     position: absolute;
-    background: rgba(255, 124, 110, .7);
+    background: rgba(0, 0, 0, .7);
     left: 0;
     top: 0;
     width: 100%;
@@ -394,7 +394,7 @@ a.read-more:hover {
 }
 
 .menu-bg .mainmenu .navbar-nav li a:hover {
-    color: #FE856C;
+    color: #000000;
 }
 
 a.slide-btn {
@@ -425,7 +425,7 @@ a.slide-btn.other-btn {
 }
 
 a.slide-btn.other-btn:hover {
-    background: #FE856C;
+    background: #000000;
 }
 
 .version:after {
@@ -570,7 +570,7 @@ a.slide-btn.other-btn:hover {
 .service-icon i {
     font-size: 30px;
     color: #fff;
-    background: #FE856C;
+    background: #000000;
     height: 70px;
     width: 70px;
     line-height: 70px;
@@ -591,7 +591,7 @@ a.slide-btn.other-btn:hover {
 */
 
 .call-to-action-small-area {
-    background: #FE856C;
+    background: #000000;
 }
 
 .call-to-action-small-area h2 {
@@ -658,7 +658,7 @@ a.call-to-more {
 }
 
 .progress-bar > span {
-    background: #FE856C none repeat scroll 0 0;
+    background: #000000 none repeat scroll 0 0;
     display: block;
     height: 100%;
     width: 0;
@@ -803,7 +803,7 @@ a.call-to-more {
     opacity: .5;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     border: 1px solid rgb(124, 115, 108);
-    background: #FE856C;
+    background: #000000;
 }
 
 
@@ -910,7 +910,7 @@ a.call-to-more {
 
 .single-contact h3 i {
     margin-right: 20px;
-    background: #FE856C;
+    background: #000000;
     height: 40px;
     width: 40px;
     text-align: center;
@@ -940,7 +940,7 @@ a.call-to-more {
 }
 
 .form-control:focus {
-    border-color: #FE856C;
+    border-color: #000000;
     outline: 0;
     box-shadow: none;
 }
@@ -951,8 +951,8 @@ a.call-to-more {
     padding: 15px 35px;
     text-transform: capitalize;
     font-size: 14px;
-    border: 1px solid #FE856C;
-    background-color: #FE856C;
+    border: 1px solid #000000;
+    background-color: #000000;
     font-weight: 600;
     border-radius: 0;
 }
@@ -960,7 +960,7 @@ a.call-to-more {
 .contact-form input[type='submit']:hover {
     background: transparent;
     color: #000;
-    border: 1px solid #FE856C;
+    border: 1px solid #000000;
     -webkit-transition: .3s;
     transition: .3s;
 }
@@ -1020,7 +1020,7 @@ a.call-to-more {
 
 .contact-social ul li a {
     font-size: 20px;
-    color: #FE856C;
+    color: #000000;
 }
 
 .footer-menu ul li {
@@ -1094,7 +1094,7 @@ a.call-to-more {
 
 .preview-header-top-area h2 {
     font-size: 80px;
-    color: #FE856C;
+    color: #000000;
     text-transform: capitalize;
     font-weight: 900;
 }
