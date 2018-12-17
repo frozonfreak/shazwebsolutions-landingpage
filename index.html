@@ -16,7 +16,7 @@
     <!-- PAGE TITLE -->
     <title>ShazWebSolutions - Web Development and Consulting agency</title>
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- ALL GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900" rel="stylesheet">
@@ -145,7 +145,8 @@
                 <!-- START ABOUT IMAGE DESIGN AREA -->
                 <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="about-image">
-                        <img src="assets/images/about_compressed.jpg" alt="" class="img-responsive">
+                        <img class="lazy img-responsive" src="assets/images/logo_white.png" data-src="assets/images/about_compressed.jpg" data-srcset="assets/images/about_compressed.jpg 2x, assets/images/about_compressed.jpg 1x"
+                            alt="About">
                     </div>
                 </div>
                 <!-- / END ABOUT IMAGE DESIGN AREA -->
@@ -339,13 +340,13 @@
                         <form action="https://formspree.io/hello@shazwebsolutions.com" method="POST">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="name" class="form-control" id="first-name" placeholder="Name" required="required">
+                                    <input type="text" aria-label="name" name="name" class="form-control" id="first-name" placeholder="Name" required="required">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
+                                    <input type="email" aria-label="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message" required="required"></textarea>
+                                    <textarea rows="6" aria-label="message" name="message" class="form-control" id="description" placeholder="Your Message" required="required"></textarea>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="actions wow fadeInDown" data-wow-delay=".4s">
@@ -398,7 +399,7 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
     <!-- BOOTSTRAP JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.appear.js"></script>
     <!-- WOW JS -->
     <script src="assets/js/wow.min.js"></script>
@@ -406,7 +407,6 @@
     <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/browser-sync-client@2.26.2/index.min.js'></script>
 </body>
 
 </html>
