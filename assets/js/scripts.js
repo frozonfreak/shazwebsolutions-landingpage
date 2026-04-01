@@ -1,155 +1,133 @@
-/*
-* ----------------------------------------------------------------------------------------
-Author       : onepageboss
-Template Name: Zestia - OnePage Creative Agency Template
-Version      : 1.0                                          
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-*  LAZY LOADING
-* ----------------------------------------------------------------------------------------
-*/
 document.addEventListener("DOMContentLoaded", function () {
-    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    var body = document.body;
+    var brandName = body ? body.getAttribute("data-brand-name") : "";
+    var brandTargets = document.querySelectorAll("[data-brand-text]");
+    var brandBadge = document.querySelector("[data-brand-badge]");
+    var pageTitle = document.querySelector("title");
+    var metaDescription = document.querySelector('meta[name="description"]');
+    var currentYear = document.getElementById("current-year");
+    var navToggle = document.querySelector(".nav-toggle");
+    var navMenu = document.querySelector(".nav-links");
+    var menuLinks = document.querySelectorAll(".nav-links a");
+    var revealTargets = document.querySelectorAll("[data-reveal]");
+    var parallaxTargets = document.querySelectorAll("[data-parallax]");
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var parallaxState = {
+        pointerX: 0,
+        pointerY: 0,
+        scrollY: window.scrollY || window.pageYOffset || 0
+    };
+    var parallaxFrame = null;
+
+    if (brandName) {
+        brandTargets.forEach(function (target) {
+            target.textContent = brandName;
+        });
+
+        if (pageTitle) {
+            pageTitle.textContent = brandName + " | Tech Services Company";
+        }
+
+        if (metaDescription) {
+            metaDescription.setAttribute(
+                "content",
+                brandName + " builds business websites, ecommerce platforms, cloud-backed applications, and modern digital systems for growing companies."
+            );
+        }
+
+        if (brandBadge) {
+            brandBadge.textContent = brandName
+                .replace(/([a-z])([A-Z])/g, "$1 $2")
+                .split(/[\s_-]+/)
+                .filter(Boolean)
+                .slice(0, 3)
+                .map(function (part) {
+                    return part.charAt(0).toUpperCase();
+                })
+                .join("");
+        }
+    }
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", function () {
+            var isOpen = navMenu.classList.toggle("is-open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        menuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    function renderParallax() {
+        parallaxTargets.forEach(function (target) {
+            var rect = target.getBoundingClientRect();
+            var speed = parseFloat(target.getAttribute("data-parallax-speed")) || 0.05;
+            var axis = target.getAttribute("data-parallax-axis") || "y";
+            var viewportOffset = (rect.top + rect.height * 0.5) - window.innerHeight * 0.5;
+            var scrollShift = viewportOffset * speed * -0.2;
+            var pointerShiftX = parallaxState.pointerX * speed * 18;
+            var pointerShiftY = parallaxState.pointerY * speed * 18;
+            var nextX = axis === "x" || axis === "both" ? pointerShiftX : 0;
+            var nextY = axis === "y" || axis === "both" ? scrollShift + pointerShiftY : 0;
+
+            target.style.setProperty("--parallax-x", nextX.toFixed(2) + "px");
+            target.style.setProperty("--parallax-y", nextY.toFixed(2) + "px");
+        });
+
+        parallaxFrame = null;
+    }
+
+    function queueParallax() {
+        if (!parallaxFrame) {
+            parallaxFrame = window.requestAnimationFrame(renderParallax);
+        }
+    }
+
+    if (!prefersReducedMotion && parallaxTargets.length) {
+        window.addEventListener("scroll", function () {
+            parallaxState.scrollY = window.scrollY || window.pageYOffset || 0;
+            queueParallax();
+        }, {
+            passive: true
+        });
+
+        window.addEventListener("mousemove", function (event) {
+            parallaxState.pointerX = (event.clientX / window.innerWidth - 0.5) * 2;
+            parallaxState.pointerY = (event.clientY / window.innerHeight - 0.5) * 2;
+            queueParallax();
+        });
+
+        window.addEventListener("resize", queueParallax);
+        queueParallax();
+    }
 
     if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+        var revealObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.srcset = lazyImage.dataset.srcset;
-                    lazyImage.classList.remove("lazy");
-                    lazyImageObserver.unobserve(lazyImage);
+                    entry.target.classList.add("is-visible");
+                    revealObserver.unobserve(entry.target);
                 }
             });
+        }, {
+            threshold: 0.14
         });
 
-        lazyImages.forEach(function (lazyImage) {
-            lazyImageObserver.observe(lazyImage);
+        revealTargets.forEach(function (target, index) {
+            target.style.setProperty("--reveal-delay", (index % 6) * 0.06 + "s");
+            revealObserver.observe(target);
         });
     } else {
-        // Possibly fall back to a more compatible method here
+        revealTargets.forEach(function (target) {
+            target.classList.add("is-visible");
+        });
     }
 });
-
-(function ($) {
-    'use strict';
-
-    jQuery(document).ready(function () {
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  PRELOADER JS
-         * ----------------------------------------------------------------------------------------
-         */
-        var prealoaderOption = $(window);
-        prealoaderOption.on("load", function () {
-            var preloader = jQuery('.spinner');
-            var preloaderArea = jQuery('.preloader-area');
-            preloader.fadeOut();
-            preloaderArea.delay(350).fadeOut('slow');
-        });
-
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  CHANGE MENU BACKGROUND JS
-         * ----------------------------------------------------------------------------------------
-         */
-        var headertopoption = $(window);
-        var headTop = $('.header-top-area');
-
-        headertopoption.on('scroll', function () {
-            if (headertopoption.scrollTop() > 200) {
-                headTop.addClass('menu-bg');
-            } else {
-                headTop.removeClass('menu-bg');
-            }
-        });
-
-
-
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  SMOTH SCROOL JS
-         * ----------------------------------------------------------------------------------------
-         */
-
-        $('a.smoth-scroll').on("click", function (e) {
-            var anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $(anchor.attr('href')).offset().top - 50
-            }, 1000);
-            e.preventDefault();
-        });
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  PROGRESS BAR JS
-         * ----------------------------------------------------------------------------------------
-         */
-        $('.progress-bar > span').each(function () {
-            var $this = $(this);
-            var width = $(this).data('percent');
-            $this.css({
-                'transition': 'width 3s'
-            });
-            setTimeout(function () {
-                $this.appear(function () {
-                    $this.css('width', width + '%');
-                });
-            }, 500);
-        });
-
-
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  EXTRA JS
-         * ----------------------------------------------------------------------------------------
-         */
-        $(document).on('click', '.navbar-collapse.in', function (e) {
-            if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
-                $(this).collapse('hide');
-            }
-        });
-        $('body').scrollspy({
-            target: '.navbar-collapse',
-            offset: 195
-        });
-
-
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  SCROOL TO UP JS
-         * ----------------------------------------------------------------------------------------
-         */
-        $(window).on("scroll", function () {
-            if ($(this).scrollTop() > 250) {
-                $('.scrollup').fadeIn();
-            } else {
-                $('.scrollup').fadeOut();
-            }
-        });
-        $('.scrollup').on("click", function () {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-
-        /*
-         * ----------------------------------------------------------------------------------------
-         *  WOW JS
-         * ----------------------------------------------------------------------------------------
-         */
-        new WOW().init();
-
-    });
-
-})(jQuery);

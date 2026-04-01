@@ -1,411 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- META -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Web Development, ECommerce, SEO and consultation">
-    <meta name="keywords" content="web development, ecommerce, laravel, php, javascript, web consultation, seo, cloud, aws, modern, responsive">
-    <meta name="author" content="Sastha">
-
-    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="ShazWebSolutions builds business websites, ecommerce platforms, cloud-backed applications, and modern digital systems for growing companies.">
+    <meta name="keywords" content="web development company, ecommerce development, web applications, cloud solutions, technical consulting, SEO, responsive websites">
+    <meta name="author" content="shazwebsolutions">
+    <meta name="theme-color" content="#0d1320">
     <link rel="manifest" href="/manifest.json">
+    <title>ShazWebSolutions | Tech Services Company</title>
 
-    <!-- PAGE TITLE -->
-    <title>ShazWebSolutions - Web Development and Consulting agency</title>
-    <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- ALL GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900" rel="stylesheet">
-    <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome-5.5.0.min.css">
-    <!-- ANIMATE CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/effects.css">
-    <link rel="stylesheet" href="assets/css/animated-text.css">
-    <!-- MAIN STYLE CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122939296-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-130018967-1');
-    </script>
 </head>
-
-<body>
-    <!-- START PRELOADER AREA-->
-    <div class="preloader-area">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
-    </div>
-    <!-- END PRELOADER AREA -->
-
-    <!-- START HOMEPAGE DESIGN AREA -->
-    <header id="home" class="welcome-area">
-        <div class="header-top-area">
+<body data-brand-name="ShazWebSolutions" data-legal-name="shazwebsolutions">
+    <div class="page-shell">
+        <header class="site-header">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <!-- START LOGO DESIGN AREA -->
-                        <div class="logo">
-                            <a href="index.html">
-                                <!-- <img src="assets/images/logo_white.png" alt="" class=""> -->
-                                <p>ShazWebSolutions</p>
-                            </a>
-                        </div>
-                        <!-- END LOGO DESIGN AREA -->
+                <nav class="nav-bar">
+                    <a class="brand-mark" href="#home" aria-label="Home">
+                        <span class="brand-badge" data-brand-badge>SWS</span>
+                        <span class="brand-copy">
+                            <span class="brand-name" data-brand-text>ShazWebSolutions</span>
+                            <span class="brand-subtitle">Technology services company</span>
+                        </span>
+                    </a>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="nav-links" id="site-menu">
+                        <a href="#services">Services</a>
+                        <a href="#approach">Approach</a>
+                        <a href="#contact">Contact</a>
+                        <a class="nav-cta" href="#contact">Book a consultation</a>
                     </div>
-                    <div class="col-md-9">
-                        <!-- START MENU DESIGN AREA -->
-                        <div class="mainmenu">
-                            <div class="navbar navbar-nobg">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div class="navbar-collapse collapse">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="active"><a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
-                                        </li>
-                                        <li><a class="smoth-scroll" href="#About">About</a>
-                                        </li>
-                                        <li><a class="smoth-scroll" href="#service">Services</a>
-                                        </li>
-                                        <li><a class="smoth-scroll" href="#contact">Contact us</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END MENU DESIGN AREA -->
-                    </div>
-                </div>
+                </nav>
             </div>
-        </div>
-        <div class="welcome-image-area version" data-stellar-background-ratio="0.6">
-            <div class="display-table">
-                <div class="display-table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="header-text text-center">
-                                    <h2 class="cd-headline clip is-full-width">
-                                        <span class="cd-words-wrapper">
-                                            <b class="is-visible">Web Consultation</b>
-                                            <b>Web Development</b>
-                                            <b>Ecommerce</b>
-                                            <b>Cloud Solutions</b>
-                                        </span>
-                                    </h2>
-                                    <p>Crafting visually stunning memorable experiences for web and interfaces.</p>
-                                    <!-- <p>We are a creative web design agency who helps people expand businesses to web.</p> -->
-                                    <a class="slide-btn smoth-scroll" href="#contact">Hire us</a>
-                                </div>
+        </header>
+
+        <main id="home">
+            <section class="hero-section">
+                <div class="hero-orb hero-orb-one" data-parallax data-parallax-speed="0.18" data-parallax-axis="both"></div>
+                <div class="hero-orb hero-orb-two" data-parallax data-parallax-speed="0.12" data-parallax-axis="both"></div>
+                <div class="hero-gridlines" data-parallax data-parallax-speed="0.08" data-parallax-axis="y"></div>
+                <div class="container hero-grid">
+                    <div class="hero-copy" data-reveal data-parallax data-parallax-speed="0.05" data-parallax-axis="y">
+                        <p class="eyebrow">Digital products, websites, and systems that move businesses forward</p>
+                        <h1>Professional web engineering for companies that need more than a brochure site.</h1>
+                        <p class="hero-text">We help businesses plan, design, build, and support modern digital experiences, from marketing websites and ecommerce storefronts to custom web applications and cloud-backed platforms.</p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="#contact">Start your project</a>
+                            <a class="button button-secondary" href="#services">Explore services</a>
+                        </div>
+                        <ul class="trust-points">
+                            <li>Custom development</li>
+                            <li>Cloud-ready delivery</li>
+                            <li>Long-term support</li>
+                        </ul>
+                    </div>
+                    <div class="hero-visual" data-reveal data-parallax data-parallax-speed="0.1" data-parallax-axis="y">
+                        <div class="hero-kicker">What we do</div>
+                        <div class="hero-line-group">
+                            <div class="hero-line">
+                                <span class="hero-line-label">Web</span>
+                                <p>Marketing sites and custom platforms shaped around business outcomes.</p>
+                            </div>
+                            <div class="hero-line">
+                                <span class="hero-line-label">Commerce</span>
+                                <p>Stores and buying flows built for clarity, trust, and growth.</p>
+                            </div>
+                            <div class="hero-line">
+                                <span class="hero-line-label">Cloud</span>
+                                <p>Deployment, maintenance, and support that keep systems dependable.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <!-- / END HOMEPAGE DESIGN AREA -->
+            </section>
 
-    <!-- START ABOUT DESIGN AREA -->
-    <section id="About" class="about-us-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2>About Us</h2>
-                    </div>
+            <section class="client-strip" data-reveal data-parallax data-parallax-speed="0.04" data-parallax-axis="y">
+                <div class="container client-strip-inner">
+                    <p>Built for service businesses, product teams, founders, and brands that need practical technical execution.</p>
                 </div>
-            </div>
-            <div class="row">
-                <!-- START ABOUT IMAGE DESIGN AREA -->
-                <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
-                    <div class="about-image">
-                        <img class="lazy img-responsive" src="assets/images/logo_white.png" data-src="assets/images/about_compressed.jpg" data-srcset="assets/images/about_compressed.jpg 2x, assets/images/about_compressed.jpg 1x"
-                            alt="About">
-                    </div>
-                </div>
-                <!-- / END ABOUT IMAGE DESIGN AREA -->
-                <!-- START ABOUT TEXT DESIGN AREA -->
-                <div class="col-md-6">
-                    <div class="about-text">
-                        <h2 class="wow fadeInDown" data-wow-delay=".2s">A creative webdesign Agency</h2>
-                        <p class="wow fadeInDown" data-wow-delay=".4s">We are a team of passionate web developers and designers who are always on the lookout for creative challenges. </p>
-                        <!-- <a href="" class="read-more wow fadeInDown" data-wow-delay=".6s">Learn more</a> -->
-                    </div>
-                </div>
-                <!-- / END ABOUT TEXT DESIGN AREA -->
-            </div>
-        </div>
-    </section>
-    <!-- / END ABOUT DESIGN AREA -->
+            </section>
 
-    <!-- START SERVICE DESIGN AREA -->
-    <section id="service" class="service-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2>Our Services</h2>
+            <section class="section" id="services">
+                <div class="container">
+                    <div class="section-heading" data-reveal data-parallax data-parallax-speed="0.04" data-parallax-axis="y">
+                        <p class="eyebrow">Services</p>
+                        <h2>Focused capabilities for companies building or upgrading their digital presence.</h2>
+                        <p>Every engagement is shaped around business goals, technical constraints, and the level of support you actually need after launch.</p>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay=".2s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-book"></i>
-                        </div>
-                        <h4>Web Development</h4>
-                        <p>Have your business customized online platform to grow customer traffic and conversion. </p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay=".4s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-adjust "></i>
-                        </div>
-                        <h4>Cloud Solutions</h4>
-                        <p>Hosting, Storage, Maintenance, Backup, Infrastructure. We got you covered. </p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay=".6s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-american-sign-language-interpreting "></i>
-                        </div>
-                        <h4>App Design</h4>
-                        <p>Visually stunning and intuitive apps to keep your customers engaged. </p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay=".8s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-clone"></i>
-                        </div>
-                        <h4>Ecommerce</h4>
-                        <p>We'll help set up a kick-ass ecommerce platform for your business. Reach customers worldwide with your shop on web.</p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay="1s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-gitlab"></i>
-                        </div>
-                        <h4>Responsive WebDesign</h4>
-                        <p>iPhone/Android, Mobile/Tablet, Desktop/Laptop, Engage your customers irrespective of platform. </p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-                <!-- START SINGLE SERVICE DESIGN AREA -->
-                <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInDown" data-wow-delay="1.2s">
-                    <div class="single-service">
-                        <div class="service-icon"><i class="fa fa-google-wallet"></i>
-                        </div>
-                        <h4>SEO</h4>
-                        <p>Improve ranking, drive traffic, increase awareness and visibility for your website or webpage.</p>
-                    </div>
-                </div>
-                <!-- / END SINGLE SERVICE DESIGN AREA -->
-            </div>
-        </div>
-    </section>
-    <!-- / END SERVICE DESIGN AREA -->
-
-
-    <!-- START CALL TO ACTION SMALL AREA -->
-    <section class="call-to-action-small-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <h2>We can help you to grow your online business</h2>
-                </div>
-                <div class="col-md-4">
-                    <div class="call-to-action-small-button">
-                        <a href="#contact" class="call-to-more">Contact now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- / END CALL TO ACTION SMALL AREA -->
-
-
-    <!-- START OUR KEY SKILL DESIGN AREA -->
-    <section class="our-key-skill-area section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- START VIDEO DESIGN AREA -->
-                <div class="col-md-6">
-                    <div class="skill-text">
-                        <h2>Our key skills</h2>
-                        <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookever since the 1500s, when an unknown printer took a galley of type and scrambled.</p> -->
-                    </div>
-                </div>
-                <!-- / END VIDEO DESIGN AREA -->
-                <!-- START KEY SKILL DESIGN AREA -->
-                <div class="col-md-6">
-                    <div class="our-skill">
-                        <div class="progress-bar-linear">
-                            <p class="progress-bar-text">Cloud Solutions
-                                <span>92%</span>
-                            </p>
-                            <div class="progress-bar">
-                                <span data-percent="95"></span>
+                    <div class="service-list">
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">01</span>
+                            <div>
+                                <h3>Custom web development</h3>
+                                <p>Conversion-focused websites, internal tools, portals, and bespoke web applications engineered for reliability and growth.</p>
                             </div>
-                        </div>
-                        <div class="progress-bar-linear">
-                            <p class="progress-bar-text">Web design
-                                <span>98%</span>
-                            </p>
-                            <div class="progress-bar">
-                                <span data-percent="95"></span>
+                        </article>
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">02</span>
+                            <div>
+                                <h3>Ecommerce solutions</h3>
+                                <p>Online stores and digital buying flows built to support product expansion, customer trust, and better operational clarity.</p>
                             </div>
-                        </div>
-                        <div class="progress-bar-linear">
-                            <p class="progress-bar-text">Ecommerce Development
-                                <span>98%</span>
-                            </p>
-                            <div class="progress-bar">
-                                <span data-percent="95"></span>
+                        </article>
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">03</span>
+                            <div>
+                                <h3>UI and experience design</h3>
+                                <p>Professional interfaces that simplify user decisions, sharpen brand perception, and make complex products easier to use.</p>
                             </div>
-                        </div>
-                        <div class="progress-bar-linear">
-                            <p class="progress-bar-text">Web development
-                                <span>90%</span>
-                            </p>
-                            <div class="progress-bar">
-                                <span data-percent="90"></span>
+                        </article>
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">04</span>
+                            <div>
+                                <h3>Cloud and infrastructure support</h3>
+                                <p>Deployment, hosting guidance, maintenance, backups, and environment management that keep business systems stable.</p>
                             </div>
-                        </div>
+                        </article>
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">05</span>
+                            <div>
+                                <h3>SEO and technical consulting</h3>
+                                <p>Technical audits, performance improvements, SEO foundations, and implementation support for stronger visibility.</p>
+                            </div>
+                        </article>
+                        <article class="service-row" data-reveal>
+                            <span class="service-index">06</span>
+                            <div>
+                                <h3>Ongoing product support</h3>
+                                <p>Post-launch improvements, bug fixes, optimization, and structured technical help as your business requirements evolve.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                <!-- / END KEY SKILL DESIGN AREA -->
-            </div>
-        </div>
-    </section>
-    <!-- / END KEY SKILL DESIGN AREA -->
+            </section>
 
-
-    <!-- START CONTACT DESIGN AREA -->
-    <section id="contact" class="contact-area section-padding" data-stellar-background-ratio="0.6">
-        <div class="container">
-            <div class="row contact-form-design-area">
-                <!-- START CONTACT FORM INFOMATION DESIGN AREA -->
-                <div class="col-md-6 contact-details-list">
-                    <h2>contact us</h2>
-                    <p>Looking to hire us or Got a query? We'll be happy to answer. </p>
-                    <div class="single-contact">
-                        <h3><i class="fa fa-map"></i>ShazWebSolutions, TamilNadu India</h2>
-                    </div>
-                    <!-- <div class="single-contact">
-                        <h3><i class="fa fa-phone"></i>+917708548848</h2>
-                    </div> -->
-                    <div class="single-contact">
-                        <h3> <i class="fa fa-envelope"></i>hello{at}shazwebsolutions.com</h2>
-                    </div>
-                </div>
-                <!-- / END CONTACT FORM INFOMATION DESIGN AREA -->
-                <div class="col-md-6">
-                    <!-- START CONTACT FORM DESIGN AREA -->
-                    <div class="contact-form">
-                        <form action="https://formspree.io/hello@shazwebsolutions.com" method="POST">
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <input type="text" aria-label="name" name="name" class="form-control" id="first-name" placeholder="Name" required="required">
+            <section class="section section-tinted" id="approach">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="split-copy" data-reveal data-parallax data-parallax-speed="0.05" data-parallax-axis="y">
+                            <p class="eyebrow">Approach</p>
+                            <h2>Simple process. Serious execution.</h2>
+                            <p>We keep delivery straightforward: understand the business problem, define the technical path, ship cleanly, and support what we launch.</p>
+                        </div>
+                        <div class="process-list">
+                            <article class="process-item" data-reveal>
+                                <span>01</span>
+                                <div>
+                                    <h3>Discover the real requirement</h3>
+                                    <p>We clarify scope, business goals, user needs, and the delivery constraints before building anything.</p>
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <input type="email" aria-label="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
+                            </article>
+                            <article class="process-item" data-reveal>
+                                <span>02</span>
+                                <div>
+                                    <h3>Design and build intentionally</h3>
+                                    <p>Each interface and technical decision is shaped to balance speed, usability, maintainability, and growth.</p>
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <textarea rows="6" aria-label="message" name="message" class="form-control" id="description" placeholder="Your Message" required="required"></textarea>
+                            </article>
+                            <article class="process-item" data-reveal>
+                                <span>03</span>
+                                <div>
+                                    <h3>Launch with support in place</h3>
+                                    <p>We help with deployment, fixes, refinement, and continued development so momentum does not stop after release.</p>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="actions wow fadeInDown" data-wow-delay=".4s">
-                                        <input type="submit" value="send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!">
-                                    </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section contact-section" id="contact">
+                <div class="container">
+                    <div class="contact-panel">
+                        <div class="contact-copy" data-reveal data-parallax data-parallax-speed="0.05" data-parallax-axis="y">
+                            <p class="eyebrow">Contact</p>
+                            <h2>Tell us what you need to build, improve, or untangle.</h2>
+                            <p>If you need a company website, a custom platform, ecommerce implementation, technical support, or a second opinion on an existing product, this is the place to start.</p>
+                            <div class="contact-list">
+                                <div>
+                                    <span>Email</span>
+                                    <a href="mailto:hello@shazwebsolutions.com">hello@shazwebsolutions.com</a>
+                                </div>
+                                <div>
+                                    <span>Registered name</span>
+                                    <p>shazwebsolutions</p>
+                                </div>
+                                <div>
+                                    <span>Base</span>
+                                    <p>Tamil Nadu, India. Serving clients remotely.</p>
                                 </div>
                             </div>
+                        </div>
+                        <form class="contact-form" action="https://formspree.io/hello@shazwebsolutions.com" method="POST" data-reveal>
+                            <label>
+                                <span>Name</span>
+                                <input type="text" name="name" placeholder="Your name" required>
+                            </label>
+                            <label>
+                                <span>Email</span>
+                                <input type="email" name="email" placeholder="you@company.com" required>
+                            </label>
+                            <label>
+                                <span>Project type</span>
+                                <input type="text" name="project" placeholder="Website, ecommerce, app, support">
+                            </label>
+                            <label>
+                                <span>Message</span>
+                                <textarea name="message" rows="6" placeholder="Share the business goal, current situation, and what you want to improve." required></textarea>
+                            </label>
+                            <button class="button button-primary" type="submit">Send inquiry</button>
                         </form>
                     </div>
-                    <!-- / END CONTACT FORM DESIGN AREA -->
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- / END CONTACT DESIGN AREA -->
+            </section>
+        </main>
 
-    <!-- START FOOTER DESIGN AREA -->
-    <footer class="footer-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <div class="footer-text">
-                        <!-- <div class="contact-social">
-                            <ul>
-                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fab fa-dribbble"></i></a></li>
-                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div> -->
-                        <h6>&copy; copyright | ShazWebSolutions</h6>
-                    </div>
-                </div>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>&copy; <span id="current-year"></span> <span data-brand-text>ShazWebSolutions</span>. All rights reserved.</p>
+                <a href="#home">Back to top</a>
             </div>
-        </div>
-    </footer>
-    <!-- / END CONTACT DETAILS DESIGN AREA -->
-
-    <!-- START SCROOL UP DESIGN AREA -->
-    <div class="scroll-to-up">
-        <div class="scrollup">
-            <i class="fa fa-angle-double-up"></i>
-        </div>
+        </footer>
     </div>
-    <!-- / END SCROOL UP DESIGN AREA -->
 
-    <!-- LATEST JQUERY -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-    <!-- BOOTSTRAP JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <!-- WOW JS -->
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/animated-text.js"></script>
-    <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
-
 </body>
-
 </html>
