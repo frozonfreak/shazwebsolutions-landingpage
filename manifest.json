@@ -1,6 +1,6 @@
 {
-  "short_name": "SWS",
-  "name": "ShazWebSolutions Tech Services",
+  "short_name": "AruviFlow",
+  "name": "AruviFlow Tech Services",
   "icons": [
     {
       "src": "/assets/icons/icons-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "start_url": "/",
-  "background_color": "#000000",
+  "background_color": "#0F172A",
   "display": "standalone",
-  "theme_color": "#000000"
+  "theme_color": "#0F172A"
 }
