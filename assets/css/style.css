@@ -310,6 +310,11 @@ h1, h2, h3 {
     object-fit: contain;
 }
 
+.brand-logo-sm {
+    height: 36px;
+    max-width: 160px;
+}
+
 /* Nav links */
 .nav-links {
     display: flex;
