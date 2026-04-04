@@ -21,6 +21,7 @@
 
     /* Remove horizontal connector line — cards are stacked */
     .process-grid::before { display: none; }
+
 }
 
 /* ── 820px — mobile nav ──────────────────────────── */
