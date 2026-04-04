@@ -278,9 +278,9 @@
             <div class="projects-grid">
 
                 <!-- NilamFlow -->
-                <article class="project-card" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal>
                     <div class="project-card-top">
-                        <span class="project-badge">Farm Management SaaS</span>
+                        <span class="project-badge project-badge-teal">Farm Management SaaS</span>
                         <a class="project-gh-link" href="https://nilamflow.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit NilamFlow">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
@@ -288,7 +288,7 @@
                             Visit site
                         </a>
                     </div>
-                    <h3 class="project-name">NilamFlow</h3>
+                    <h3 class="project-name project-name-gradient">NilamFlow</h3>
                     <p class="project-tagline">Farm operations software built for Indian farms — from field to market in one platform.</p>
                     <p class="project-desc">NilamFlow is a multi-tenant SaaS application enabling farm owners and operators to run field-to-market operations from one integrated platform. It serves farms with multiple locations and workforces — seasonal pickers through to permanent staff — with harvest tracking, payroll, vendor dispatch, retail sales, inventory, and financial reporting.</p>
                     <ul class="project-features">
@@ -307,86 +307,6 @@
                         <span>Multi-tenant</span>
                     </div>
 
-                    <!-- Toggle -->
-                    <button class="project-details-toggle" type="button" aria-expanded="false">
-                        <span class="toggle-label">View full feature breakdown</span>
-                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-
-                    <!-- Expandable details -->
-                    <div class="project-details" aria-hidden="true">
-                        <div class="project-details-inner">
-                            <div class="project-details-domains">
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Harvest &amp; Field Operations</span>
-                                    <ul class="project-features">
-                                        <li>Harvest session lifecycle: open → closed → payroll pending → paid</li>
-                                        <li>Harvest entry logging with weight and rate tracking per worker</li>
-                                        <li>Per-crop configuration with yield rates and unit settings</li>
-                                        <li>Team attendance, weight logs, and grocery expense tracking</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Employee &amp; Payroll</span>
-                                    <ul class="project-features">
-                                        <li>Employee types: permanent, temporary, contract, seasonal</li>
-                                        <li>Recurring payroll — daily, weekly, biweekly, monthly frequencies</li>
-                                        <li>Component-based entries — allowances, bonuses, deductions with line-item detail</li>
-                                        <li>Draft → approved → paid workflow with PDF payslip export</li>
-                                        <li>Attendance, leave types, leave requests, and balance tracking</li>
-                                        <li>Bank account and statutory configuration per employee</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Inventory</span>
-                                    <ul class="project-features">
-                                        <li>Items with categories, crop linkage, and location assignment</li>
-                                        <li>Full transaction log — stock-in, stock-out, adjustments</li>
-                                        <li>Processing workflows and personal use records</li>
-                                        <li>Low-stock alerts via background jobs</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Vendor &amp; Dispatch</span>
-                                    <ul class="project-features">
-                                        <li>Vendor master data and contact management</li>
-                                        <li>Dispatch orders linked to harvest sessions with payment status</li>
-                                        <li>Vendor payment history and undo support</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Sales &amp; Revenue</span>
-                                    <ul class="project-features">
-                                        <li>Retail customer management with credit limits</li>
-                                        <li>Sales orders with line items, tax, and discount</li>
-                                        <li>Credit note issuance, payment tracking, PDF invoice export</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Billing &amp; Subscriptions</span>
-                                    <ul class="project-features">
-                                        <li>Razorpay subscriptions with tiered plans and state machine: trialing → active → past_due → expired</li>
-                                        <li>Dunning workflow with 3-stage escalating email reminders</li>
-                                        <li>Invoice generation, PDF delivery, and refund processing</li>
-                                    </ul>
-                                </div>
-
-                                <div class="domain-group">
-                                    <span class="stack-category">Tech stack</span>
-                                    <p class="project-stack-detail">Laravel 12 · PHP 8.5 · Livewire 3 + Volt · Tailwind CSS · Alpine.js · Razorpay SDK · Anthropic Claude API · Laravel Scout · Laravel Pulse · MariaDB multi-tenancy via BelongsToTenant · 14 authorization policies · 540+ PHPUnit tests · queued jobs with retry/backoff · signed URLs · 2FA</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </article>
 
                 <!-- GraftAI -->
@@ -443,71 +363,17 @@
                         <li>Stripe billing — usage-based limits, trial management, and full webhook lifecycle handling</li>
                     </ul>
 
-                    <!-- Toggle button -->
-                    <button class="project-details-toggle" type="button" aria-expanded="false">
-                        <span class="toggle-label">View technical details</span>
-                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-
-                    <!-- Expandable details -->
-                    <div class="project-details" aria-hidden="true">
-                        <div class="project-details-inner">
-                            <div class="project-details-grid">
-                                <div>
-                                    <p class="project-stack-label">Tech stack</p>
-                                    <div class="project-stack-group">
-                                        <span class="stack-category">Backend</span>
-                                        <div class="project-tech">
-                                            <span>Django 5.1</span>
-                                            <span>Django Ninja</span>
-                                            <span>Django Channels</span>
-                                            <span>PostgreSQL</span>
-                                            <span>Redis</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-stack-group">
-                                        <span class="stack-category">AI / NLP</span>
-                                        <div class="project-tech">
-                                            <span>OpenAI</span>
-                                            <span>Gemini 2.5</span>
-                                            <span>LangChain</span>
-                                            <span>Weaviate</span>
-                                            <span>Whisper</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-stack-group">
-                                        <span class="stack-category">Frontend</span>
-                                        <div class="project-tech">
-                                            <span>Vue 3</span>
-                                            <span>Pinia</span>
-                                            <span>Tailwind CSS</span>
-                                            <span>Stripe.js</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-stack-group">
-                                        <span class="stack-category">Infrastructure</span>
-                                        <div class="project-tech">
-                                            <span>Azure</span>
-                                            <span>Docker</span>
-                                            <span>Blob Storage</span>
-                                            <span>Rollbar</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="project-stack-label">Technical highlights</p>
-                                    <ul class="project-features">
-                                        <li>Async WebSocket consumers for concurrent real-time transcription sessions</li>
-                                        <li>Parallel LLM execution per clinical section with LangChain pipelines</li>
-                                        <li>Soft-delete audit trail throughout for clinical compliance</li>
-                                        <li>7 Django apps · 40+ REST endpoints · 25+ relational models</li>
-                                        <li>Multi-environment CI/CD (dev → staging → production) on Azure Container Apps</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="project-tech">
+                        <span>Django 5.1</span>
+                        <span>Vue 3</span>
+                        <span>OpenAI</span>
+                        <span>Gemini 2.5</span>
+                        <span>LangChain</span>
+                        <span>Weaviate</span>
+                        <span>WebSockets</span>
+                        <span>PostgreSQL</span>
+                        <span>Azure</span>
+                        <span>Stripe</span>
                     </div>
                 </article>
 
