@@ -139,6 +139,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /* ── Project details toggle ───────────────────── */
+    document.querySelectorAll(".project-details-toggle").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            var expanded = btn.getAttribute("aria-expanded") === "true";
+            var panel    = btn.nextElementSibling;
+            var label    = btn.querySelector(".toggle-label");
+
+            btn.setAttribute("aria-expanded", String(!expanded));
+            panel.setAttribute("aria-hidden",  String(expanded));
+            label.textContent = expanded ? "View technical details" : "Hide technical details";
+        });
+    });
+
     /* ── Marquee pause on hover ───────────────────── */
     var marqueeInner = document.querySelector(".marquee-inner");
     var marqueeStrip = document.querySelector(".marquee-strip");
