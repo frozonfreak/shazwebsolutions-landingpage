@@ -472,12 +472,12 @@ h1, h2, h3 {
     max-width: 880px;
 }
 
-/* Staggered entrance for each child */
+/* Staggered entrance for each child — heading is NOT hidden before paint (LCP) */
 .hero-badge    { animation: heroUp 0.7s var(--spring) 0.10s both; }
-.hero-heading  { animation: heroUp 0.8s var(--spring) 0.25s both; }
-.hero-body     { animation: heroUp 0.7s var(--ease)   0.44s both; }
-.hero-actions  { animation: heroUp 0.7s var(--spring) 0.58s both; }
-.hero-tags     { animation: heroUp 0.7s var(--ease)   0.72s both; }
+.hero-heading  { animation: heroUp 0.8s var(--spring) 0s    forwards; }
+.hero-body     { animation: heroUp 0.7s var(--ease)   0.30s both; }
+.hero-actions  { animation: heroUp 0.7s var(--spring) 0.44s both; }
+.hero-tags     { animation: heroUp 0.7s var(--ease)   0.58s both; }
 
 .hero-badge {
     display: inline-flex;
@@ -1434,7 +1434,7 @@ a.contact-info-value:focus-visible {
    KEYFRAMES
    ============================================================ */
 @keyframes heroUp {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0.01; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
