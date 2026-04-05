@@ -12,24 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("[data-brand-text]").forEach(function (el) {
             el.textContent = brandName;
         });
-
-        var title = document.querySelector("title");
-        if (title) title.textContent = brandName + " | Tech Services Company";
-
-        var desc = document.querySelector('meta[name="description"]');
-        if (desc) desc.setAttribute("content",
-            brandName + " builds business websites, ecommerce platforms, " +
-            "cloud-backed applications, and modern digital systems for growing companies.");
-
-        /* Initials badge */
-        document.querySelectorAll("[data-brand-badge]").forEach(function (el) {
-            el.textContent = brandName
-                .replace(/([a-z])([A-Z])/g, "$1 $2")
-                .split(/[\s_-]+/).filter(Boolean)
-                .slice(0, 3)
-                .map(function (w) { return w.charAt(0).toUpperCase(); })
-                .join("");
-        });
     }
 
     /* ── Current year ─────────────────────────────── */
