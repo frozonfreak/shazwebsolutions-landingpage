@@ -1,7 +1,13 @@
 /* ============================================================
-   SHAZWEBSOLUTIONS — SCRIPTS.JS
+   ARUVIFLOW — SCRIPTS.JS
    Minimal vanilla JS — fast, no dependencies
    ============================================================ */
+
+/* ── Google Analytics ─────────────────────────────────────── */
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "G-XS0SCLLDST", { anonymize_ip: true });
 
 document.addEventListener("DOMContentLoaded", function () {
     var body      = document.body;

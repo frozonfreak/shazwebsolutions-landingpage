@@ -3,6 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+        style-src 'self' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https://www.google-analytics.com;
+        connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://formspree.io;
+        form-action 'self' https://formspree.io;
+        frame-ancestors 'none';
+        base-uri 'self';
+        object-src 'none';
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     <meta name="description" content="AruviFlow is a SaaS, cloud & AI development studio. We build multi-tenant SaaS platforms, LLM-integrated products, and cloud infrastructure for startups — using Laravel, Django, Vue 3, and Azure.">
     <meta name="keywords" content="SaaS development, AI integration, LLM development, cloud infrastructure, multi-tenant SaaS, Laravel development, Django development, Vue 3, real-time systems, startup technology studio, AI-powered software, Azure deployment">
     <meta name="author" content="AruviFlow">
@@ -64,12 +82,6 @@
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS0SCLLDST"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XS0SCLLDST');
-    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
