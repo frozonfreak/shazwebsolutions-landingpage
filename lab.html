@@ -144,6 +144,32 @@
                     </div>
                 </article>
 
+                <!-- Zaika -->
+                <article class="project-card project-card-highlight" data-reveal>
+                    <div class="project-card-top">
+                        <span class="project-badge project-badge-teal">NLP &middot; Search &middot; POC</span>
+                    </div>
+                    <h2 class="project-name project-name-gradient">Zaika</h2>
+                    <p class="project-tagline">Recipe search that understands what you actually mean — not just what you typed.</p>
+                    <p class="project-desc">Zaika is a full-stack recipe search engine that processes natural language queries like "spicy vegetarian dinner under 30 minutes" through a multi-stage NLP pipeline — intent detection, entity extraction, ingredient normalisation, DSL query building, and semantic vector search — returning ranked, explainable results without relying on any external AI API.</p>
+                    <ul class="project-features">
+                        <li>Intent classification — detects whether the query is craving, ingredient, dietary, time, or cuisine-driven</li>
+                        <li>Entity extraction — pulls ingredients, cook times, and dietary flags from free-form text</li>
+                        <li>Ingredient normalisation — canonical alias mapping ("curd" → yogurt, "chillies" → green chilli)</li>
+                        <li>DSL builder — translates parsed intent into structured AND / OR / EXCLUDE queries against the database</li>
+                        <li>Semantic embedding — 1536-dim vectors generated locally (no external API) with cosine similarity via pgvector</li>
+                        <li>Dynamic scoring — ranks by relevance, cook time, nutrition, and personalised taste profile</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Laravel 13</span>
+                        <span>PostgreSQL</span>
+                        <span>pgvector</span>
+                        <span>NLP Pipeline</span>
+                        <span>Semantic Search</span>
+                        <span>PHP 8.3</span>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
