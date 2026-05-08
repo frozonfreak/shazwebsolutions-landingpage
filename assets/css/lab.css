@@ -1,0 +1,118 @@
+/* ============================================================
+   ARUVIFLOW LAB — lab.css
+   Page-specific styles for the Lab experiments page
+   ============================================================ */
+
+/* ── Lab Hero ─────────────────────────────────────────────── */
+.lab-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    overflow: hidden;
+}
+
+.lab-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.lab-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    animation: glowFloat 22s ease-in-out infinite;
+    will-change: transform;
+}
+
+.lab-glow-1 {
+    width: 500px; height: 400px;
+    top: -120px; right: -80px;
+    background: radial-gradient(ellipse at center,
+        rgba(34, 211, 238, 0.15) 0%,
+        rgba(37, 99, 235, 0.08) 55%,
+        transparent 72%);
+}
+
+.lab-glow-2 {
+    width: 380px; height: 320px;
+    bottom: -80px; left: -60px;
+    background: radial-gradient(ellipse at center,
+        rgba(37, 99, 235, 0.12) 0%,
+        transparent 70%);
+    animation-delay: -10s;
+}
+
+.lab-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 0%, transparent 80%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 0%, transparent 80%);
+}
+
+/* Top horizon line */
+.lab-hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 8%; right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(34, 211, 238, 0.45) 30%,
+        rgba(37, 99, 235, 0.35) 70%,
+        transparent 100%);
+}
+
+.lab-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.lab-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 28px;
+}
+
+.lab-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 10px var(--teal-glow);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+.lab-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+.lab-hero-body {
+    font-size: 1.08rem;
+    color: var(--text-2);
+    max-width: 580px;
+    line-height: 1.75;
+}
+
+/* ── Lab section ───────────────────────────────────────────── */
+.lab-section {
+    background: var(--bg-2);
+}
+
+/* ── Pulse animation (reuse badge dot pattern) ─────────────── */
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.55; transform: scale(0.85); }
+}

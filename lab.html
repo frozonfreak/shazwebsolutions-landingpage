@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+        style-src 'self' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https://www.google-analytics.com;
+        connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net;
+        frame-ancestors 'none';
+        base-uri 'self';
+        object-src 'none';
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+    <meta name="description" content="AruviFlow Lab — experimental AI and mobile proof-of-concept projects. Early-stage ideas built to explore new technology.">
+    <meta name="author" content="AruviFlow">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="canonical" href="https://aruviflow.com/lab">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aruviflow.com/lab">
+    <meta property="og:site_name" content="AruviFlow">
+    <meta property="og:title" content="AruviFlow Lab | Experimental AI & Mobile Projects">
+    <meta property="og:description" content="AruviFlow Lab — early-stage proof-of-concept projects exploring AI, mobile, and emerging technology.">
+    <meta property="og:image" content="https://aruviflow.com/assets/images/og-image.png">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@aruviflow">
+    <meta name="twitter:title" content="AruviFlow Lab | Experimental AI & Mobile Projects">
+    <meta name="twitter:description" content="AruviFlow Lab — early-stage proof-of-concept projects exploring AI, mobile, and emerging technology.">
+    <meta name="twitter:image" content="https://aruviflow.com/assets/images/og-image.png">
+
+    <link rel="manifest" href="/manifest.json">
+    <title>AruviFlow Lab | Experimental Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/lab.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS0SCLLDST"></script>
+</head>
+<body>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ── Header ── -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav-bar">
+                <a class="brand-mark" href="index.html" aria-label="AruviFlow home">
+                    <img src="assets/images/logo.png" alt="AruviFlow" class="brand-logo" width="216" height="53" fetchpriority="high">
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="site-menu">
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#approach">How we work</a>
+                    <a href="index.html#projects">Work</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a class="nav-cta" href="index.html#contact">Start a project</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+    <!-- ── Lab Hero ── -->
+    <section class="lab-hero">
+        <div class="lab-hero-bg" aria-hidden="true">
+            <div class="lab-glow lab-glow-1"></div>
+            <div class="lab-glow lab-glow-2"></div>
+            <div class="lab-grid"></div>
+        </div>
+        <div class="container">
+            <div class="lab-hero-inner">
+                <div class="lab-eyebrow">
+                    <span class="lab-dot"></span>
+                    AruviFlow Lab
+                </div>
+                <h1>Experiments &amp; <span class="text-gradient">proof of concepts.</span></h1>
+                <p class="lab-hero-body">Early-stage ideas built to explore new technology — AI, mobile, real-time systems, and more. These projects are live explorations, not production products.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Lab Projects ── -->
+    <section class="section lab-section">
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Radius -->
+                <article class="project-card project-card-highlight" data-reveal>
+                    <div class="project-card-top">
+                        <span class="project-badge project-badge-teal">AI &middot; Mobile &middot; POC</span>
+                        <a class="project-gh-link" href="https://radar.aruviflow.com" target="_blank" rel="noopener noreferrer" aria-label="View Radius demo">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                            </svg>
+                            Live demo
+                        </a>
+                    </div>
+                    <h2 class="project-name project-name-gradient">Radius</h2>
+                    <p class="project-tagline">Hyper-local news and events, curated by AI from your exact location.</p>
+                    <p class="project-desc">Radius is a context-aware local discovery application that uses the device's native GPS to fetch, parse, and curate real-time local news and events via Gemini AI with Search Grounding. Built as a responsive web app and packaged for Android via Capacitor — demonstrating write-once, deploy-anywhere with LLM-driven content curation.</p>
+                    <ul class="project-features">
+                        <li>Native GPS geolocation via Capacitor — exact neighbourhood-level context, not city-level</li>
+                        <li>Gemini 2.5 Pro with Search Grounding — real-time web search anchored to user coordinates</li>
+                        <li>Intelligent parsing — AI classifies news vs event, assesses source credibility, derives image keywords, estimates reading time</li>
+                        <li>Bento Grid UI with spring-based micro-interactions and dynamic blur backgrounds</li>
+                        <li>Full async pipeline: GPS → coordinates → Gemini API → structured JSON → fluid UI grid</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Vite</span>
+                        <span>Tailwind CSS</span>
+                        <span>Framer Motion</span>
+                        <span>Capacitor</span>
+                        <span>Gemini 2.5 Pro</span>
+                        <span>Android</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="brand-mark" href="index.html" aria-label="Back to AruviFlow">
+                <img src="assets/images/logo.png" alt="AruviFlow" class="brand-logo brand-logo-sm" width="160" height="36" loading="lazy">
+            </a>
+            <p class="footer-copy">&copy; <span id="current-year"></span> AruviFlow. All rights reserved.</p>
+            <a href="index.html" class="footer-top">Back to main site &uarr;</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
