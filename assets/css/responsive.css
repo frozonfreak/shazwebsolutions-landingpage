@@ -1,5 +1,5 @@
 /* ============================================================
-   SHAZWEBSOLUTIONS — RESPONSIVE.CSS
+   ARUVIFLOW — RESPONSIVE.CSS
    ============================================================ */
 
 /* ── 1080px ─────────────────────────────────────── */
@@ -22,6 +22,20 @@
     /* Remove horizontal connector line — cards are stacked */
     .process-grid::before { display: none; }
 
+    /* About / architect — stack, un-stick the card */
+    .architect-panel {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .architect-media {
+        position: static;
+        justify-items: center;
+        text-align: center;
+    }
+
+    /* Philosophy — single column */
+    .philosophy-grid { grid-template-columns: 1fr; }
 }
 
 /* ── 820px — mobile nav ──────────────────────────── */
@@ -101,6 +115,10 @@
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
     .form-row { grid-template-columns: 1fr; }
+
+    /* Keep the architecture diagram legible — scroll rather than shrink */
+    .philosophy-diagram { padding: 16px; }
+    .philosophy-diagram svg { min-width: 440px; }
 
     .contact-form { padding: 24px 20px; }
 
