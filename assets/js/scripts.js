@@ -24,6 +24,36 @@ document.addEventListener("DOMContentLoaded", function () {
     var yearEl = document.getElementById("current-year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ── Colour theme toggle ──────────────────────── */
+    var themeBtn = document.querySelector(".theme-toggle");
+    if (themeBtn) {
+        var root = document.documentElement;
+        var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        var currentTheme = function () {
+            return root.getAttribute("data-theme") ||
+                   (systemDark.matches ? "dark" : "light");
+        };
+        var syncLabel = function () {
+            var t = currentTheme();
+            themeBtn.textContent = t === "dark" ? "Light" : "Dark";
+            themeBtn.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " theme");
+        };
+        var applyTheme = function (t) {
+            root.setAttribute("data-theme", t);
+            try { localStorage.setItem("af-theme", t); } catch (e) {}
+            syncLabel();
+        };
+
+        syncLabel();
+        themeBtn.addEventListener("click", function () {
+            applyTheme(currentTheme() === "dark" ? "light" : "dark");
+        });
+        systemDark.addEventListener("change", function () {
+            if (!root.getAttribute("data-theme")) syncLabel();
+        });
+    }
+
     /* ── Mobile nav ───────────────────────────────── */
     var navToggle = document.querySelector(".nav-toggle");
     var navMenu   = document.querySelector(".nav-links");
@@ -140,20 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    /* ── Marquee pause on hover ───────────────────── */
-    var marqueeInner = document.querySelector(".marquee-inner");
-    var marqueeStrip = document.querySelector(".marquee-strip");
-
-    if (marqueeInner && marqueeStrip) {
-        marqueeStrip.addEventListener("mouseenter", function () {
-            marqueeInner.style.animationPlayState = "paused";
-        });
-        marqueeStrip.addEventListener("mouseleave", function () {
-            marqueeInner.style.animationPlayState = "running";
-        });
-    }
-
-    /* ── Button active ripple (micro-interaction) ─── */
+    /* ── Button press feedback (micro-interaction) ── */
     document.querySelectorAll(".btn").forEach(function (btn) {
         btn.addEventListener("pointerdown", function () {
             btn.style.transform = "scale(0.97)";
