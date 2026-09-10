@@ -13,7 +13,7 @@
     --line-strong: #D5D8DE;
     --ink:         #14161C;
     --ink-2:       #565E6B;
-    --ink-3:       #8B93A0;
+    --ink-3:       #6B7280;  /* ≥4.5:1 on --bg (HIG-VIS-004) */
 
     /* ── Accent — blue ── */
     --accent-base:     #3B5BDB;
@@ -49,7 +49,7 @@
     --line-strong: #333842;
     --ink:         #F1F3F6;
     --ink-2:       #A0A7B3;
-    --ink-3:       #6B7280;
+    --ink-3:       #8B93A0;  /* ≥4.5:1 on dark --bg (HIG-VIS-004) */
 
     --accent:        color-mix(in oklab, var(--accent-base), white 24%);
     --accent-strong: color-mix(in oklab, var(--accent-base), white 38%);
@@ -71,7 +71,7 @@
         --line-strong: #333842;
         --ink:         #F1F3F6;
         --ink-2:       #A0A7B3;
-        --ink-3:       #6B7280;
+        --ink-3:       #8B93A0;  /* ≥4.5:1 on dark --bg (HIG-VIS-004) */
 
         --accent:        color-mix(in oklab, var(--accent-base), white 24%);
         --accent-strong: color-mix(in oklab, var(--accent-base), white 38%);
@@ -116,6 +116,22 @@ img { max-width: 100%; display: block; }
 }
 :target      { scroll-margin-top: 90px; }
 section[id]  { scroll-margin-top: 78px; }
+
+/* ── Skip link (HIG-A11Y-009) ── */
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    z-index: 300;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: top 0.16s var(--ease);
+}
+.skip-link:focus { top: 12px; }
 
 /* ── Scroll progress ── */
 .scroll-progress {
@@ -337,10 +353,15 @@ h1, h2, h3 {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-2);
+    padding: 6px 2px;               /* ≥24px hit target (HIG-A11Y-010) */
     transition: color 0.14s var(--ease);
 }
 .nav-links a:not(.nav-cta):hover,
-.nav-links a:not(.nav-cta):focus-visible { color: var(--ink); }
+.nav-links a:not(.nav-cta):focus-visible {
+    color: var(--ink);
+    text-decoration: underline;      /* platform convention (HIG-UX-011) */
+    text-underline-offset: 4px;
+}
 
 .nav-cta {
     padding: 8px 16px;
@@ -852,8 +873,8 @@ h1, h2, h3 {
 }
 .project-badge-teal {
     background: var(--accent-wash);
-    border-color: color-mix(in oklab, var(--accent), transparent 68%);
-    color: var(--accent);
+    border-color: color-mix(in oklab, var(--accent), transparent 60%);
+    color: var(--accent-strong);   /* ≥4.5:1 on --accent-wash (HIG-VIS-004) */
 }
 .project-gh-link {
     display: inline-flex;
@@ -997,8 +1018,18 @@ h1, h2, h3 {
     color: var(--ink-2);
     transition: color 0.16s var(--ease);
 }
+/* anchor variant must read as a link, not plain text (HIG-UX-001, HIG-VIS-003) */
+a.contact-info-value {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, var(--accent), transparent 55%);
+}
 a.contact-info-value:hover,
-a.contact-info-value:focus-visible { color: var(--accent); }
+a.contact-info-value:focus-visible {
+    color: var(--accent-strong);
+    text-decoration-color: currentColor;
+}
 
 .contact-form {
     display: grid;
@@ -1022,12 +1053,13 @@ a.contact-info-value:focus-visible { color: var(--accent); }
     text-transform: uppercase;
     color: var(--ink-3);
 }
+.form-field .opt { text-transform: none; letter-spacing: 0; color: var(--ink-3); }
 .form-field input,
 .form-field textarea {
     width: 100%;
     padding: 11px 14px;
     background: var(--bg);
-    border: 1px solid var(--line);
+    border: 1px solid var(--ink-3);   /* ≥3:1 non-text contrast (HIG-VIS-004 / WCAG 1.4.11) */
     border-radius: var(--radius-sm);
     color: var(--ink);
     font-size: 0.93rem;
@@ -1074,7 +1106,7 @@ a.contact-info-value:focus-visible { color: var(--accent); }
     transition: color 0.16s var(--ease);
 }
 .footer-top:hover,
-.footer-top:focus-visible { color: var(--accent); }
+.footer-top:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 
 /* ============================================================
    KEYFRAMES
