@@ -876,6 +876,12 @@ h1, h2, h3 {
     border-color: color-mix(in oklab, var(--accent), transparent 60%);
     color: var(--accent-strong);   /* ≥4.5:1 on --accent-wash (HIG-VIS-004) */
 }
+.project-gh-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
 .project-gh-link {
     display: inline-flex;
     align-items: center;
