@@ -10,6 +10,8 @@
     .contact-panel { grid-template-columns: 1fr; gap: 48px; }
     .contact-copy > p { max-width: none; }
 
+    .estimate-panel { grid-template-columns: 1fr; }
+
     .architect-panel { grid-template-columns: 1fr; gap: 36px; }
     .architect-media {
         position: static;

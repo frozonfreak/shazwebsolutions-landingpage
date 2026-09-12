@@ -120,6 +120,7 @@
                         <a href="#services">Capabilities</a>
                         <a href="#architecture">Architecture</a>
                         <a href="#projects">Work</a>
+                        <a href="#estimate">Scope</a>
                         <a href="lab.html">Lab</a>
                         <a href="#contact">Contact</a>
                         <a class="nav-cta" href="#contact">Start a project</a>
@@ -139,9 +140,15 @@
     <section class="hero-section" id="home">
         <div class="container">
             <div class="hero-inner">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Now accepting new projects
+                <div class="hero-badge-row">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Now accepting new projects
+                    </div>
+                    <div class="hero-clock" id="hero-clock">
+                        <span class="clock-dot" aria-hidden="true"></span>
+                        <span id="hero-clock-time">--:--</span>&nbsp;IST &middot; Tamil Nadu, India
+                    </div>
                 </div>
                 <h1 class="hero-heading">
                     We architect <span class="text-gradient">AI-native SaaS</span><br>
@@ -149,7 +156,7 @@
                     that ship and scale.
                 </h1>
                 <p class="hero-body">
-                    AruviFlow is a SaaS, cloud &amp; AI studio led by an independent platform architect with 15+ years' experience. We turn complex business requirements into production-ready, multi-tenant platforms — with AI built into the architecture, not bolted on.
+                    A SaaS, cloud &amp; AI studio led by one architect, 15+ years in — production-ready, multi-tenant platforms with AI built into the architecture, not bolted on.
                 </p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#contact">Start a project</a>
@@ -421,6 +428,7 @@
                             Visit site
                         </a>
                     </div>
+                    <p class="project-meta">Solo build &middot; Live in production &middot; Ongoing</p>
                     <h3 class="project-name project-name-gradient">NilamFlow</h3>
                     <p class="project-tagline">Farm operations software built for Indian farms — from field to market in one platform.</p>
                     <p class="project-desc">NilamFlow is a multi-tenant SaaS application enabling farm owners and operators to run field-to-market operations from one integrated platform. It serves farms with multiple locations and workforces — seasonal pickers through to permanent staff — with harvest tracking, payroll, vendor dispatch, retail sales, inventory, and financial reporting.</p>
@@ -453,6 +461,7 @@
                             Visit site
                         </a>
                     </div>
+                    <p class="project-meta">Solo build &middot; Live in production &middot; Part of NilamFlow</p>
                     <h3 class="project-name project-name-gradient">Farm Doctor</h3>
                     <p class="project-tagline">The RAG engine behind <strong>nilamAI</strong> — NilamFlow's in-app agronomy assistant.</p>
                     <p class="project-desc">Farm Doctor is a retrieval-augmented knowledge system for Indian agriculture, shipped in production as <strong>nilamAI</strong> inside NilamFlow. It indexes authoritative sources — advisories, package-of-practice documents, and crop guidance — and answers grower questions through LLM assistance anchored to that corpus rather than open-ended generation.</p>
@@ -482,6 +491,7 @@
                             View on GitHub
                         </a>
                     </div>
+                    <p class="project-meta">Solo build &middot; Open source &middot; Active</p>
                     <h3 class="project-name project-name-gradient">GraftAI</h3>
                     <p class="project-tagline">Let your users tell you what to build next.</p>
                     <p class="project-desc">GraftAI is an open-source Laravel package for multi-tenant SaaS platforms. Tenants describe what they need in plain English — GraftAI uses Claude AI to convert that into a live, scheduled data pipeline instantly. No code, no deployment. Over time it watches which pipelines tenants independently build, spots patterns, and surfaces them as one-click feature promotions — turning real usage into your product roadmap.</p>
@@ -508,6 +518,7 @@
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Behavioral Analytics</span>
                     </div>
+                    <p class="project-meta">Solo build &middot; Internal tool &middot; Active</p>
                     <h3 class="project-name project-name-gradient">Portfolio Intelligence System</h3>
                     <p class="project-tagline">Behavioral telemetry for developer-AI collaboration — signal-driven and archetype-aware.</p>
                     <p class="project-desc">A behavioral telemetry platform that ingests raw development events — commits, edits, AI prompts, refactors — and processes them through a service-oriented pipeline to produce normalized signals, effort scores (0–10), and archetype classifications across 6 developer profiles.</p>
@@ -539,6 +550,7 @@
                             View on GitHub
                         </a>
                     </div>
+                    <p class="project-meta">Solo build &middot; Open source package &middot; Stable</p>
                     <h3 class="project-name project-name-gradient">Plan Manager</h3>
                     <p class="project-tagline">Remove hardcoded pricing and access logic from your Laravel SaaS — for good.</p>
                     <p class="project-desc">Plan Manager is a Laravel-native package that centralises plan configuration, feature entitlements, usage limits, trials, and add-ons in one place — keeping billing-provider logic entirely separate. Inspired by Magento-style rule configuration, it gives SaaS applications a clean API for access control without coupling to Stripe, Razorpay, Paddle, or Cashier.</p>
@@ -569,6 +581,7 @@
                             Visit site
                         </a>
                     </div>
+                    <p class="project-meta">Solo build &middot; Live in production &middot; Client project</p>
                     <h3 class="project-name project-name-gradient">ComposerAI</h3>
                     <p class="project-tagline">Clinical documentation that writes itself — in seconds.</p>
                     <p class="project-desc">ComposerAI is a full-stack SaaS platform that automates clinical documentation for healthcare practitioners. Doctors record or upload consultation audio; the platform transcribes, structures, and generates complete clinical notes and letters — ready to review in seconds, tuned per medical specialty.</p>
@@ -613,6 +626,7 @@
                             </a>
                         </span>
                     </div>
+                    <p class="project-meta">Author &amp; maintainer &middot; Open standard &middot; v1.9.0</p>
                     <h3 class="project-name project-name-gradient">The Web HIG</h3>
                     <p class="project-tagline">An open behavioural standard for how modern web interfaces should work — readable by humans and AI agents alike.</p>
                     <p class="project-desc">The Web HIG (Universal Human Interface Guidelines) is a vendor-neutral, lintable contract for web application behaviour. It complements WCAG, design systems, and HTML/CSS by specifying interaction, state, and UX consistency rather than visual style — giving developers and AI coding agents a shared set of rules to follow and validate in CI.</p>
@@ -634,6 +648,55 @@
                     </div>
                 </article>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Scope & Estimate ── -->
+    <section class="section estimate-section" id="estimate">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <p class="eyebrow">Scope &amp; investment</p>
+                <h2>Get a ballpark<br>before we talk.</h2>
+                <p class="section-sub">Every engagement is scoped to the actual problem, not a fixed package. Answer three questions for a directional estimate — then a short call confirms exact scope and cost.</p>
+            </div>
+
+            <div class="estimate-panel" data-reveal>
+                <div class="estimate-form">
+                    <label class="form-field">
+                        <span>01 &middot; What are you building?</span>
+                        <select id="est-type">
+                            <option value="new" data-weeks="8" data-model="Fixed-scope project">A new SaaS or platform, from scratch</option>
+                            <option value="ai" data-weeks="4" data-model="Fixed-scope project">AI added to an existing product</option>
+                            <option value="ops" data-weeks="6" data-model="Fixed-scope project">A business or operations platform</option>
+                            <option value="ongoing" data-weeks="0" data-model="Monthly retainer">Ongoing support for a platform I already run</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span>02 &middot; How complex is it?</span>
+                        <select id="est-complexity">
+                            <option value="1" data-mult="1">Single core workflow, one tenant type</option>
+                            <option value="2" data-mult="1.4" selected>Multiple modules, multi-tenant from day one</option>
+                            <option value="3" data-mult="1.9">Complex — integrations, billing, AI and offline sync combined</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span>03 &middot; Timeline</span>
+                        <select id="est-timeline">
+                            <option value="flexible">Flexible — quality over speed</option>
+                            <option value="standard" selected>Standard — a working few months</option>
+                            <option value="tight">Tight — need to move fast</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="estimate-result" aria-live="polite">
+                    <p class="estimate-result-label">Directional estimate</p>
+                    <p class="estimate-result-value" id="est-weeks">6&ndash;9 weeks</p>
+                    <p class="estimate-result-model" id="est-model">Fixed-scope project</p>
+                    <p class="estimate-result-note" id="est-note">A short scoping call confirms exact cost and timeline before anything is agreed.</p>
+                    <a class="btn btn-primary" href="#contact" id="est-cta">Discuss this scope</a>
+                </div>
             </div>
         </div>
     </section>

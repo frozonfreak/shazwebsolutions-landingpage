@@ -157,6 +157,76 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /* ── Live IST clock (hero) ────────────────────── */
+    var clockTimeEl = document.getElementById("hero-clock-time");
+    if (clockTimeEl) {
+        var updateClock = function () {
+            try {
+                clockTimeEl.textContent = new Intl.DateTimeFormat("en-GB", {
+                    timeZone: "Asia/Kolkata",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }).format(new Date());
+            } catch (e) {}
+        };
+        updateClock();
+        setInterval(updateClock, 30000);
+    }
+
+    /* ── Scope estimator ──────────────────────────── */
+    var estType       = document.getElementById("est-type");
+    var estComplexity = document.getElementById("est-complexity");
+    var estTimeline   = document.getElementById("est-timeline");
+    var estWeeksEl    = document.getElementById("est-weeks");
+    var estModelEl    = document.getElementById("est-model");
+    var estNoteEl     = document.getElementById("est-note");
+    var estCta        = document.getElementById("est-cta");
+
+    if (estType && estComplexity && estTimeline && estWeeksEl) {
+        var updateEstimate = function () {
+            var typeOpt    = estType.options[estType.selectedIndex];
+            var baseWeeks  = parseFloat(typeOpt.getAttribute("data-weeks"));
+            var model      = typeOpt.getAttribute("data-model");
+            var multOpt    = estComplexity.options[estComplexity.selectedIndex];
+            var mult       = parseFloat(multOpt.getAttribute("data-mult"));
+            var timeline   = estTimeline.value;
+
+            estModelEl.textContent = model;
+
+            if (baseWeeks === 0) {
+                estWeeksEl.textContent = "Rolling engagement";
+                estNoteEl.textContent  = "Monthly capacity and scope are agreed up front, and adjusted as the work evolves.";
+                return;
+            }
+
+            var low  = Math.max(1, Math.round(baseWeeks * mult));
+            var high = Math.max(low + 1, Math.round(baseWeeks * mult * 1.3));
+            var rangeText = low + "–" + high + " weeks";
+
+            if (timeline === "tight") {
+                estNoteEl.textContent = "Tight timelines are workable, but usually mean shipping a smaller first phase before the rest.";
+            } else {
+                estNoteEl.textContent = "A short scoping call confirms exact cost and timeline before anything is agreed.";
+            }
+            estWeeksEl.textContent = rangeText;
+        };
+
+        [estType, estComplexity, estTimeline].forEach(function (el) {
+            el.addEventListener("change", updateEstimate);
+        });
+        updateEstimate();
+
+        if (estCta) {
+            estCta.addEventListener("click", function () {
+                var projectField = document.querySelector('input[name="project"]');
+                if (projectField && !projectField.value) {
+                    var typeLabel = estType.options[estType.selectedIndex].textContent;
+                    projectField.value = typeLabel + " — " + estWeeksEl.textContent;
+                }
+            });
+        }
+    }
+
     /* ── Project details toggle ───────────────────── */
     document.querySelectorAll(".project-details-toggle").forEach(function (btn) {
         btn.addEventListener("click", function () {
