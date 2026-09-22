@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var t = currentTheme();
             themeBtn.textContent = t === "dark" ? "Light" : "Dark";
             themeBtn.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " theme");
+            themeBtn.setAttribute("aria-pressed", String(t === "dark"));
         };
         var applyTheme = function (t) {
             root.setAttribute("data-theme", t);
@@ -59,24 +60,50 @@ document.addEventListener("DOMContentLoaded", function () {
     var navMenu   = document.querySelector(".nav-links");
 
     if (navToggle && navMenu) {
+        var closeMenu = function (restoreFocus) {
+            navMenu.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.setAttribute("aria-label", "Open navigation");
+            if (restoreFocus) navToggle.focus();
+        };
+
+        var openMenu = function () {
+            navMenu.classList.add("is-open");
+            navToggle.setAttribute("aria-expanded", "true");
+            navToggle.setAttribute("aria-label", "Close navigation");
+            var firstLink = navMenu.querySelector("a");
+            if (firstLink) firstLink.focus();
+        };
+
         navToggle.addEventListener("click", function () {
-            var open = navMenu.classList.toggle("is-open");
-            navToggle.setAttribute("aria-expanded", String(open));
+            if (navMenu.classList.contains("is-open")) {
+                closeMenu(false);
+            } else {
+                openMenu();
+            }
         });
 
         navMenu.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
-                navMenu.classList.remove("is-open");
-                navToggle.setAttribute("aria-expanded", "false");
+                closeMenu(false);
             });
         });
 
         document.addEventListener("click", function (e) {
             if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove("is-open");
-                navToggle.setAttribute("aria-expanded", "false");
+                closeMenu(false);
             }
         });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && navMenu.classList.contains("is-open")) {
+                closeMenu(true);
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 820) closeMenu(false);
+        }, { passive: true });
     }
 
     /* ── Header scroll state ──────────────────────── */
@@ -94,10 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (progressEl) {
         var updateProgress = function () {
             var doc  = document.documentElement;
-            var pct  = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
+            var max  = doc.scrollHeight - doc.clientHeight;
+            var pct  = max > 0 ? (window.scrollY / max) * 100 : 0;
             progressEl.style.setProperty("--scroll-pct", Math.min(pct, 100).toFixed(1) + "%");
         };
         window.addEventListener("scroll", updateProgress, { passive: true });
+        updateProgress();
     }
 
     var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -227,6 +256,63 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /* ── Contact form async state ─────────────────── */
+    var contactForm   = document.querySelector(".contact-form");
+    var contactStatus = document.getElementById("contact-status");
+    var contactSubmit = document.getElementById("contact-submit");
+
+    if (contactForm && contactStatus && contactSubmit) {
+        var setFormStatus = function (type, message) {
+            contactStatus.classList.remove("is-success", "is-error");
+            if (type) contactStatus.classList.add("is-" + type);
+            contactStatus.textContent = message || "";
+        };
+
+        contactForm.addEventListener("invalid", function () {
+            setFormStatus("error", "Please fill in the required fields before sending.");
+        }, true);
+
+        contactForm.addEventListener("input", function () {
+            if (contactStatus.classList.contains("is-error") && contactForm.checkValidity()) {
+                setFormStatus("", "");
+            }
+        });
+
+        contactForm.addEventListener("submit", function (e) {
+            if (!window.fetch) return;
+
+            e.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+                contactForm.reportValidity();
+                setFormStatus("error", "Please fill in the required fields before sending.");
+                return;
+            }
+
+            var originalLabel = contactSubmit.textContent;
+            contactSubmit.disabled = true;
+            contactSubmit.textContent = "Sending...";
+            contactForm.setAttribute("aria-busy", "true");
+            setFormStatus("", "Sending your message...");
+
+            fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: { "Accept": "application/json" }
+            }).then(function (response) {
+                if (!response.ok) throw new Error("Form submission failed");
+                contactForm.reset();
+                setFormStatus("success", "Message sent. We will reply by email soon.");
+            }).catch(function () {
+                setFormStatus("error", "The message could not be sent. Please email hello@aruviflow.com or try again.");
+            }).finally(function () {
+                contactSubmit.disabled = false;
+                contactSubmit.textContent = originalLabel;
+                contactForm.removeAttribute("aria-busy");
+            });
+        });
+    }
+
     /* ── Project details toggle ───────────────────── */
     document.querySelectorAll(".project-details-toggle").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -249,6 +335,12 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.style.transform = "";
         });
         btn.addEventListener("pointerleave", function () {
+            btn.style.transform = "";
+        });
+        btn.addEventListener("pointercancel", function () {
+            btn.style.transform = "";
+        });
+        btn.addEventListener("blur", function () {
             btn.style.transform = "";
         });
     });

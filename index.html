@@ -7,7 +7,7 @@
     <!-- Security -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
-        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-RByDkCcnzLSKVJ3rVfwYLMP2LR/QWaaLNTM5FGh+5gU=' 'sha256-ZKvz+NFVdzP2Sm31XbYA5i2mt7OTs+WclTfn6lhSI10=';
         style-src 'self' https://fonts.googleapis.com;
         font-src 'self' https://fonts.gstatic.com;
         img-src 'self' data: https://www.google-analytics.com;
@@ -99,17 +99,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body data-brand-name="AruviFlow" data-legal-name="AruviFlow">
+<body data-brand-name="AruviFlow" data-legal-name="AruviFlow" data-hig-surface="hybrid">
 
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Scroll progress -->
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true" data-hig-motion-class="ambient"></div>
 
     <!-- ── Header ── -->
     <header class="site-header">
         <div class="container">
-            <nav class="nav-bar">
+            <nav class="nav-bar" aria-label="Primary">
                 <a class="brand-mark" href="#home" aria-label="AruviFlow home">
                     <span class="brand-word">AruviFlow</span>
                     <span class="brand-tag">Platform architecture</span>
@@ -125,8 +125,8 @@
                         <a href="#contact">Contact</a>
                         <a class="nav-cta" href="#contact">Start a project</a>
                     </div>
-                    <button class="theme-toggle" type="button" aria-label="Switch colour theme">Dark</button>
-                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation">
+                    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch colour theme">Dark</button>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
@@ -179,7 +179,7 @@
     <section class="section architect-section" id="about">
         <div class="container">
             <div class="architect-panel">
-                <div class="architect-media" data-reveal>
+                <div class="architect-media" data-reveal data-hig-motion-class="narrative">
                     <div class="architect-avatar" aria-hidden="true">SKL</div>
                     <p class="architect-name">Sastha K L</p>
                     <p class="architect-role">Independent Platform Architect</p>
@@ -190,7 +190,7 @@
                         github.com/frozonfreak
                     </a>
                 </div>
-                <div class="architect-copy" data-reveal>
+                <div class="architect-copy" data-reveal data-hig-motion-class="narrative">
                     <p class="eyebrow">Who's behind AruviFlow</p>
                     <h2>One architect. 15+ years<br>of shipping platforms.</h2>
                     <p>AruviFlow is led by Sastha K L, an independent software architect and full-stack engineer with 15+ years designing, building, and scaling SaaS products, business platforms, and AI-enabled systems.</p>
@@ -209,13 +209,13 @@
     <!-- ── Capabilities ── -->
     <section class="section" id="services">
         <div class="container">
-            <div class="section-header" data-reveal>
+            <div class="section-header" data-reveal data-hig-motion-class="narrative">
                 <p class="eyebrow">Capabilities</p>
                 <h2>Architecture-led SaaS, AI<br>&amp; cloud engineering.</h2>
                 <p class="section-sub">Six areas we go deep on. Every engagement is scoped to what the product, business model, and scale actually need — not what fills a proposal.</p>
             </div>
             <div class="services-grid">
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
@@ -229,7 +229,7 @@
                     </div>
                 </article>
 
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2a4 4 0 014 4v2a4 4 0 01-8 0V6a4 4 0 014-4z"/><path d="M2 20c0-4 4-7 10-7s10 3 10 7"/>
@@ -243,7 +243,7 @@
                     </div>
                 </article>
 
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
@@ -257,7 +257,7 @@
                     </div>
                 </article>
 
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -271,7 +271,7 @@
                     </div>
                 </article>
 
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -285,7 +285,7 @@
                     </div>
                 </article>
 
-                <article class="service-card" data-reveal>
+                <article class="service-card" data-reveal data-hig-motion-class="narrative">
                     <div class="service-icon" aria-hidden="true">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -306,19 +306,19 @@
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item" data-reveal>
+                <div class="stat-item" data-reveal data-hig-motion-class="narrative">
                     <p class="stat-number" data-count="15" data-suffix="+">15+</p>
                     <p class="stat-label">Years building platforms</p>
                 </div>
-                <div class="stat-item" data-reveal>
+                <div class="stat-item" data-reveal data-hig-motion-class="narrative">
                     <p class="stat-number" data-count="3">3</p>
                     <p class="stat-label">Flagship SaaS platforms</p>
                 </div>
-                <div class="stat-item" data-reveal>
+                <div class="stat-item" data-reveal data-hig-motion-class="narrative">
                     <p class="stat-number" data-count="2">2</p>
                     <p class="stat-label">Open-source Laravel packages</p>
                 </div>
-                <div class="stat-item" data-reveal>
+                <div class="stat-item" data-reveal data-hig-motion-class="narrative">
                     <p class="stat-number">&#8734;</p>
                     <p class="stat-label">Support after launch</p>
                 </div>
@@ -330,23 +330,23 @@
     <section class="section approach-section" id="approach">
         <div class="approach-glow" aria-hidden="true"></div>
         <div class="container">
-            <div class="section-header" data-reveal>
+            <div class="section-header" data-reveal data-hig-motion-class="narrative">
                 <p class="eyebrow">How we work</p>
                 <h2>Architecture first.<br>Then build. Then evolve.</h2>
                 <p class="section-sub">We work from both directions — business to system, and system to product — so the foundation fits the problem and the product can grow without rebuilding its core.</p>
             </div>
             <div class="process-grid">
-                <article class="process-card" data-reveal>
+                <article class="process-card" data-reveal data-hig-motion-class="narrative">
                     <span class="process-num">01</span>
                     <h3>Architecture &amp; Scope</h3>
                     <p>We map the workflow, constraints, economics, and users first — then define the tenancy model, data model, and integration points. Scope and success criteria are agreed before code.</p>
                 </article>
-                <article class="process-card" data-reveal>
+                <article class="process-card" data-reveal data-hig-motion-class="narrative">
                     <span class="process-num">02</span>
                     <h3>Build &amp; Iterate</h3>
                     <p>Iterative delivery with you in the loop. We pick the right stack for the product and scale — simple and maintainable over novel — and keep decisions reversible where it counts.</p>
                 </article>
-                <article class="process-card" data-reveal>
+                <article class="process-card" data-reveal data-hig-motion-class="narrative">
                     <span class="process-num">03</span>
                     <h3>Launch &amp; Evolve</h3>
                     <p>We handle deployment and stay engaged after go-live — shipping improvements, watching the system in production, and evolving the platform as the business changes.</p>
@@ -359,24 +359,24 @@
     <section class="section philosophy-section" id="architecture">
         <div class="philosophy-glow" aria-hidden="true"></div>
         <div class="container">
-            <div class="section-header" data-reveal>
+            <div class="section-header" data-reveal data-hig-motion-class="narrative">
                 <p class="eyebrow">How we think about architecture</p>
                 <h2>Simple systems<br>that outlast the first release.</h2>
                 <p class="section-sub">The goal isn't the newest technology — it's the right combination for the product, business model, scale, and what it costs to operate.</p>
             </div>
             <div class="philosophy-grid">
-                <article class="philosophy-card" data-reveal>
+                <article class="philosophy-card" data-reveal data-hig-motion-class="narrative">
                     <span class="philosophy-dir">Business &rarr; System</span>
                     <h3>Understand before architecting</h3>
                     <p>Workflow, constraints, economics, and user needs come first. The architecture follows from the problem — not from a stack we wanted to use.</p>
                 </article>
-                <article class="philosophy-card" data-reveal>
+                <article class="philosophy-card" data-reveal data-hig-motion-class="narrative">
                     <span class="philosophy-dir">System &rarr; Product</span>
                     <h3>Build a foundation that evolves</h3>
                     <p>The technical core is designed so the product can grow — new features, new tenants, new integrations — without repeatedly rebuilding what it stands on.</p>
                 </article>
             </div>
-            <figure class="philosophy-diagram" data-reveal>
+            <figure class="philosophy-diagram" data-reveal data-hig-motion-class="narrative">
                 <svg viewBox="0 0 640 290" role="img" aria-labelledby="phil-diagram-title" xmlns="http://www.w3.org/2000/svg">
                     <title id="phil-diagram-title">Business context shapes the architecture; the architecture is designed so the product evolves without a rewrite.</title>
                     <g text-anchor="middle" font-family="'Hanken Grotesk', sans-serif">
@@ -411,14 +411,14 @@
     <!-- ── Projects ── -->
     <section class="section projects-section" id="projects">
         <div class="container">
-            <div class="section-header" data-reveal>
+            <div class="section-header" data-reveal data-hig-motion-class="narrative">
                 <p class="eyebrow">Our work</p>
                 <h2>Platforms and AI products<br>we've built and shipped.</h2>
             </div>
             <div class="projects-grid">
 
                 <!-- NilamFlow -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Farm Management SaaS</span>
                         <a class="project-gh-link" href="https://nilamflow.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit NilamFlow">
@@ -451,7 +451,7 @@
                 </article>
 
                 <!-- Farm Doctor -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">RAG &middot; AI &middot; In Production</span>
                         <a class="project-gh-link" href="https://nilamflow.com/" target="_blank" rel="noopener noreferrer" aria-label="See Farm Doctor in NilamFlow">
@@ -481,7 +481,7 @@
                 </article>
 
                 <!-- GraftAI -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Open Source</span>
                         <a class="project-gh-link" href="https://github.com/frozonfreak/graftai" target="_blank" rel="noopener noreferrer" aria-label="View GraftAI on GitHub">
@@ -514,7 +514,7 @@
                 </article>
 
                 <!-- Portfolio Intelligence System -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Behavioral Analytics</span>
                     </div>
@@ -540,7 +540,7 @@
                 </article>
 
                 <!-- Plan Manager -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Open Source · Laravel Package</span>
                         <a class="project-gh-link" href="https://github.com/frozonfreak/plan-manager" target="_blank" rel="noopener noreferrer" aria-label="View Plan Manager on GitHub">
@@ -571,7 +571,7 @@
                 </article>
 
                 <!-- ComposerAI -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">SaaS &middot; Healthcare AI</span>
                         <a class="project-gh-link" href="https://composermedical.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit ComposerAI">
@@ -608,7 +608,7 @@
                 </article>
 
                 <!-- The Web HIG -->
-                <article class="project-card project-card-highlight" data-reveal>
+                <article class="project-card project-card-highlight" data-reveal data-hig-motion-class="narrative">
                     <div class="project-card-top">
                         <span class="project-badge project-badge-teal">Open Standard &middot; AI</span>
                         <span class="project-gh-links">
@@ -655,34 +655,34 @@
     <!-- ── Scope & Estimate ── -->
     <section class="section estimate-section" id="estimate">
         <div class="container">
-            <div class="section-header" data-reveal>
+            <div class="section-header" data-reveal data-hig-motion-class="narrative">
                 <p class="eyebrow">Scope &amp; investment</p>
                 <h2>Get a ballpark<br>before we talk.</h2>
                 <p class="section-sub">Every engagement is scoped to the actual problem, not a fixed package. Answer three questions for a directional estimate — then a short call confirms exact scope and cost.</p>
             </div>
 
-            <div class="estimate-panel" data-reveal>
+            <div class="estimate-panel" data-reveal data-hig-motion-class="narrative">
                 <div class="estimate-form">
-                    <label class="form-field">
+                    <label class="form-field" for="est-type">
                         <span>01 &middot; What are you building?</span>
-                        <select id="est-type">
+                        <select id="est-type" name="est-type">
                             <option value="new" data-weeks="8" data-model="Fixed-scope project">A new SaaS or platform, from scratch</option>
                             <option value="ai" data-weeks="4" data-model="Fixed-scope project">AI added to an existing product</option>
                             <option value="ops" data-weeks="6" data-model="Fixed-scope project">A business or operations platform</option>
                             <option value="ongoing" data-weeks="0" data-model="Monthly retainer">Ongoing support for a platform I already run</option>
                         </select>
                     </label>
-                    <label class="form-field">
+                    <label class="form-field" for="est-complexity">
                         <span>02 &middot; How complex is it?</span>
-                        <select id="est-complexity">
+                        <select id="est-complexity" name="est-complexity">
                             <option value="1" data-mult="1">Single core workflow, one tenant type</option>
                             <option value="2" data-mult="1.4" selected>Multiple modules, multi-tenant from day one</option>
                             <option value="3" data-mult="1.9">Complex — integrations, billing, AI and offline sync combined</option>
                         </select>
                     </label>
-                    <label class="form-field">
+                    <label class="form-field" for="est-timeline">
                         <span>03 &middot; Timeline</span>
-                        <select id="est-timeline">
+                        <select id="est-timeline" name="est-timeline">
                             <option value="flexible">Flexible — quality over speed</option>
                             <option value="standard" selected>Standard — a working few months</option>
                             <option value="tight">Tight — need to move fast</option>
@@ -706,7 +706,7 @@
         <div class="contact-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="contact-panel">
-                <div class="contact-copy" data-reveal>
+                <div class="contact-copy" data-reveal data-hig-motion-class="narrative">
                     <p class="eyebrow">Get in touch</p>
                     <h2>Tell us what you're building.</h2>
                     <p>Got a platform in mind, or an existing system that needs to scale? Tell us the business problem, where you're stuck, and any timelines — we'll take it from there.</p>
@@ -726,15 +726,15 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formspree.io/f/mgopljar" method="POST" data-reveal>
+                <form class="contact-form" action="https://formspree.io/f/mgopljar" method="POST" data-reveal data-hig-motion-class="narrative">
                     <div class="form-row">
                         <label class="form-field">
                             <span>Your name</span>
-                            <input type="text" name="name" placeholder="Full name" autocomplete="name" required>
+                            <input type="text" name="name" placeholder="Full name" autocomplete="name" required aria-required="true">
                         </label>
                         <label class="form-field">
                             <span>Email address</span>
-                            <input type="email" name="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
+                            <input type="email" name="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required aria-required="true">
                         </label>
                     </div>
                     <label class="form-field">
@@ -743,9 +743,10 @@
                     </label>
                     <label class="form-field">
                         <span>Tell us more</span>
-                        <textarea name="message" rows="5" placeholder="Share what you need, where you're at, and any timelines..." required></textarea>
+                        <textarea name="message" rows="5" placeholder="Share what you need, where you're at, and any timelines..." required aria-required="true"></textarea>
                     </label>
-                    <button class="btn btn-primary" type="submit">Send message</button>
+                    <button class="btn btn-primary" type="submit" id="contact-submit">Send message</button>
+                    <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -765,6 +766,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>

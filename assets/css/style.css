@@ -24,6 +24,8 @@
 
     /* ── Status ── */
     --signal: #0C9D6E;
+    --signal-danger: #B42318;
+    --signal-danger-wash: color-mix(in oklab, var(--signal-danger), var(--bg) 90%);
 
     /* ── Shape / motion ── */
     --radius:    10px;
@@ -56,6 +58,8 @@
     --accent-wash:   color-mix(in oklab, var(--accent-base), var(--bg) 84%);
 
     --signal: #3FC79A;
+    --signal-danger: #FF8A80;
+    --signal-danger-wash: color-mix(in oklab, var(--signal-danger), var(--bg) 86%);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow:    0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -18px rgba(0, 0, 0, 0.6);
@@ -78,6 +82,8 @@
         --accent-wash:   color-mix(in oklab, var(--accent-base), var(--bg) 84%);
 
         --signal: #3FC79A;
+        --signal-danger: #FF8A80;
+        --signal-danger-wash: color-mix(in oklab, var(--signal-danger), var(--bg) 86%);
 
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
         --shadow:    0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -18px rgba(0, 0, 0, 0.6);
@@ -106,6 +112,13 @@ body {
 
 a       { color: var(--accent); text-decoration: none; }
 button, input, textarea { font: inherit; color: inherit; }
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.68;
+}
 
 img { max-width: 100%; display: block; }
 
@@ -357,7 +370,8 @@ h1, h2, h3 {
     transition: color 0.14s var(--ease);
 }
 .nav-links a:not(.nav-cta):hover,
-.nav-links a:not(.nav-cta):focus-visible {
+.nav-links a:not(.nav-cta):focus-visible,
+.nav-links a[aria-current="page"] {
     color: var(--ink);
     text-decoration: underline;      /* platform convention (HIG-UX-011) */
     text-underline-offset: 4px;
@@ -390,7 +404,9 @@ h1, h2, h3 {
     cursor: pointer;
     transition: border-color 0.14s var(--ease), color 0.14s var(--ease);
 }
-.theme-toggle:hover { border-color: var(--line-strong); color: var(--ink); }
+.theme-toggle:hover,
+.theme-toggle:focus-visible,
+.theme-toggle[aria-pressed="true"] { border-color: var(--line-strong); color: var(--ink); }
 
 /* ── Hamburger ── */
 .nav-toggle {
@@ -408,6 +424,7 @@ h1, h2, h3 {
     transition: border-color 0.16s var(--ease);
 }
 .nav-toggle:hover { border-color: var(--line-strong); }
+.nav-toggle:focus-visible { border-color: var(--accent); }
 .nav-toggle span {
     display: block;
     width: 17px;
@@ -1197,6 +1214,21 @@ a.contact-info-value:focus-visible {
 }
 .form-field textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
 
+.form-field input:user-invalid,
+.form-field textarea:user-invalid {
+    border-color: var(--signal-danger);
+    box-shadow: 0 0 0 3px var(--signal-danger-wash);
+}
+
+.form-status {
+    min-height: 1.5em;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+}
+.form-status.is-success { color: var(--signal); }
+.form-status.is-error { color: var(--signal-danger); }
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1250,7 +1282,20 @@ a.contact-info-value:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
-    [data-reveal] { opacity: 1; transform: none; }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+    [data-reveal],
+    [data-hig-motion-class="narrative"],
+    [data-hig-motion-class="ambient"] {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    .scroll-progress { display: none; }
     .hero-badge, .hero-heading, .hero-body, .hero-actions, .hero-tags { animation: none; opacity: 1; transform: none; }
 }
